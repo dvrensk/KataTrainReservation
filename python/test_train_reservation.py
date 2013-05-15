@@ -17,7 +17,7 @@ class TestTicketOffice(unittest.TestCase):
         self.assertEqual("A", reservation.seats[0].coach)
         self.assertEqual("75bcd15", reservation.booking_reference)
 
-    def test_reserve_seats_internal(self):
+    def test0_reserve_seats_internal(self):
         train = { "seats": [{ "coach" : "A", "seat_number" : "1" },
                             { "coach" : "A", "seat_number" : "2" }]}
         data_service = mock()
@@ -32,7 +32,9 @@ class TestTicketOffice(unittest.TestCase):
         self.assertEqual("A", reservation.seats[0].coach)
         self.assertEqual("75bcd15", reservation.booking_reference)
 
-
+    def test_train_seats(self):
+        seats = TrainSeats({ "seats": [{ "coach" : "A", "seat_number" : "1" },
+                            { "coach" : "A", "seat_number" : "2" }]})
 
 if __name__ == '__main__':
     unittest.main()
