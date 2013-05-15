@@ -27,3 +27,8 @@ class TrainSeats(object):
         self.coaches = {}
         for d in data:
             self.coaches.setdefault(d["coach"], []).append(d["seat_number"])
+
+    def get(self, count):
+        coach = max(self.coaches, key = lambda k: len(coaches[k]))
+        return self.coaches[coach][:count]
+        
