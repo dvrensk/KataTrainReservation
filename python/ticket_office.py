@@ -15,4 +15,6 @@ class TicketHandler(object):
         self.booking_reference_service = booking_reference_service
 
     def make_reservation(self, reservation_request):
-        return None
+        train_id = reservation_request.train_id
+        seats    = reservation_request.seats
+        return Reservation(train_id, seats, None)
