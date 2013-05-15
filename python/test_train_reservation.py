@@ -33,8 +33,8 @@ class TestTicketOffice(unittest.TestCase):
         self.assertEqual("75bcd15", reservation.booking_reference)
 
     def test_train_seats(self):
-        seats = TrainSeats({ "seats": [{ "coach" : "A", "seat_number" : "1" },
-                            { "coach" : "A", "seat_number" : "2" }]})
+        seats = TrainSeats([{ "coach" : "A", "seat_number" : "1" },
+                            { "coach" : "A", "seat_number" : "2" }])
 
 if __name__ == '__main__':
     unittest.main()
