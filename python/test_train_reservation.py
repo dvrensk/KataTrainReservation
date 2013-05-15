@@ -41,7 +41,7 @@ class TestTicketOffice(unittest.TestCase):
         seats = TrainSeats([{ "coach" : "A", "seat_number" : "1" },
                             { "coach" : "A", "seat_number" : "2" }])
         seat = seats.get(1)
-        assert seat.coach == "A" 
+        assert seat[0].coach == "A" 
 
 if __name__ == '__main__':
     unittest.main()
