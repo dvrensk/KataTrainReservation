@@ -35,6 +35,7 @@ class TestTicketOffice(unittest.TestCase):
     def test_train_seats(self):
         seats = TrainSeats([{ "coach" : "A", "seat_number" : "1" },
                             { "coach" : "A", "seat_number" : "2" }])
+        self.assertEqual(seats.coaches, {"A": ["1", "2"]})
 
 if __name__ == '__main__':
     unittest.main()
