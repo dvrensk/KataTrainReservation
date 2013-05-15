@@ -6,7 +6,7 @@ from ticket_office import *
 
 class TestTicketOffice(unittest.TestCase):
 
-    def test0_reserve_seats(self):
+    def _test_reserve_seats(self):
         office = TicketOffice(train_data_service = "http://localhost:8081", 
                               booking_reference_service = "http://localhost:8082")
         request = ReservationRequest(train_id="express_2000", seat_count=4)
@@ -17,8 +17,7 @@ class TestTicketOffice(unittest.TestCase):
         self.assertEqual("A", reservation.seats[0].coach)
         self.assertEqual("75bcd15", reservation.booking_reference)
 
-    @Ignore
-    def test_reserve_seats_internal(self):
+    def _test_reserve_seats_internal(self):
         train = { "seats": [{ "coach" : "A", "seat_number" : "1" },
                             { "coach" : "A", "seat_number" : "2" }]}
         data_service = mock()
