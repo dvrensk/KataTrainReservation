@@ -19,7 +19,8 @@ class TicketHandler(object):
         seat_count = reservation_request.seat_count
         train_data = self.train_data_service.get(train_id)
         train_seats = TrainSeats(train_data["seats"])
-        return Reservation(train_id, [Seat("A", "1"), Seat("A", "2")], "75bcd15")
+        #return Reservation(train_id, [Seat("A", "1"), Seat("A", "2")], "75bcd15")
+        return Reservation(train_id, train_seats.get(2), "75bcd15")
 
 class TrainSeats(object):
     def __init__(self, data):
