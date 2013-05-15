@@ -30,5 +30,5 @@ class TrainSeats(object):
 
     def get(self, count):
         coach = max(self.coaches, key = lambda k: len(self.coaches[k]))
-        return self.coaches[coach][:count]
+        return [Seat(coach, seat) for seat in self.coaches[coach][:count]]
         
