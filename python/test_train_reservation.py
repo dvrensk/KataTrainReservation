@@ -42,6 +42,7 @@ class TestTicketOffice(unittest.TestCase):
                             { "coach" : "A", "seat_number" : "2" }])
         seat = seats.get(1)
         assert seat[0].coach == "A" 
+        assert seat[0].seat_number == "1" 
 
 if __name__ == '__main__':
     unittest.main()
